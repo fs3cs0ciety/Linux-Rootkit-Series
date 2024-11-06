@@ -1,4 +1,4 @@
-** This is the part of the lkm that will go and hide the directory with the defined prefix "x" be sure to go into the code and experiment with it and change things ill make sure to provide in each example what you can change and experiment with. ** 
+1.  /* This is the part of the lkm that will go and hide the directory with the defined prefix "x" be sure to go into the code and experiment with it and change things ill make sure to provide in each example what you can change and experiment with. */
 
 ![hide_dir](https://github.com/user-attachments/assets/c91386e3-23c1-4cfe-adaa-4e5fda61f5f3)
 
