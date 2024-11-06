@@ -6,8 +6,8 @@
 #include "hooks/tcp4_seq_show.h"
 //#include "hooks/openat.h"
 //#include "hooks/pread64.h"
-#include "hooks/random_read_iter.h"
-#include "hooks/urandom_read_iter.h"
+//#include "hooks/random_read_iter.h"
+//#include "hooks/urandom_read_iter.h"
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("d3dsec");
