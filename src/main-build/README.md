@@ -1,3 +1,5 @@
+THIS IS FOR EDUCATIONAL PURPOSES
+
 /* The master guide thru the Xcellerator rootkit series and it's tweaked to work on the latest kernel version as well. I will have each one individually listed in its own directory in src/ as well as a main-build including all of the hooks put together in one module and wayyyyy more debloated and orginized. As my buddy Humza says DONT EVER WRITE ALL YOUR CODE IN ONE FILE YOU NUMNUT*
 
 1.  HIDING_DIRECTORIES/HIDING_FILES
