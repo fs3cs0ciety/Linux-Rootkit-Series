@@ -1,6 +1,8 @@
 #ifndef _KILL_H_
 #define _KILL_H_
 
+#include "../headers.h"
+
 static asmlinkage long (*orig_kill)(const struct pt_regs *);
 
 notrace asmlinkage int hook_kill(const struct pt_regs *regs) {
