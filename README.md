@@ -109,3 +109,10 @@ int fh_install_hook(struct ftrace_hook *hook)
 }
 ```
 
+# Extra
+
+  - Feel free to add to this, the whole point of this is to help people thats scraping the internet for malicious code examples.
+  
+  - Experiment with this repo and grasp the concept of whats going on and venture into hooking your own syscall of choice and having fun with that syscall. Make things work with that hooked syscall and big FYI if you dont already know this USE THE INTERNET TO YOUR ADVANTAGE, meet others.
+
+---
