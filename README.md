@@ -9,6 +9,22 @@ This will aim to be a full series of individual malicious linux kernel modules f
 
 # Changes from original copy of Xcellerators ftrace_helper.h library
 
+  - This is the old function fh_ftrace_thunk() and its code below:
+```
+static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, struct ftrace_ops *ops, struct pt_regs *regs)
+{
+    struct ftrace_hook *hook = container_of(ops, struct ftrace_hook, ops);
+
+#if USE_FENTRY_OFFSET
+    regs->ip = (unsigned long) hook->function;
+#else
+    if(!within_module(parent_ip, THIS_MODULE))
+        regs->ip = (unsigned long) hook->function;
+#endif
+}
+```
+
+  - This is the revised code of the function fh_ftrace_thunk() function below:
 
 ```
 static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, struct ftrace_ops *ops, struct ftrace_regs *fregs)
@@ -25,5 +41,7 @@ static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, s
 #endif
 }
 ```
+
+
 
 
