@@ -4,9 +4,9 @@
 
 ---
 
-   -- make
-   -- sudo insmod lkm.ko
-   -- echo "hello" > x_hello.txt
-   -- ls -laR 
+   - make
+   - sudo insmod lkm.ko
+   - echo "hello" > x_hello.txt
+   - ls -laR 
 
 ---
