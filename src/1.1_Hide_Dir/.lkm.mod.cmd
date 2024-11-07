@@ -1,1 +1,0 @@
-savedcmd_/home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/lkm.mod := printf '%s\n'   lkm.o | awk '!x[$$0]++ { print("/home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/"$$0) }' > /home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/lkm.mod

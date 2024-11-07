@@ -1,1 +1,0 @@
-savedcmd_/home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/lkm.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/lkm.ko /home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/lkm.o /home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/lkm.mod.o;  true
