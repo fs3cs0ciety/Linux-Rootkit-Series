@@ -1,0 +1,1 @@
+savedcmd_/home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/Module.symvers :=  scripts/mod/modpost -M  -a    -N  -o /home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/Module.symvers -n -T /home/d3dsec/Linux-Rootkit-Series/src/1.1_Hide_Dir/modules.order -i Module.symvers -e 
