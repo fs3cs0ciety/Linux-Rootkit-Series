@@ -7,9 +7,9 @@ This will aim to be a full series of individual malicious linux kernel modules f
 ** This is the link to the Xcellerator blog series https://xcellerator.github.io/posts/linux_rootkits_11/
 ---
 
-# Changes from original copy of Xcellerators ftrace_helper.h library
+# Changes for fh_ftrace_thunk()
 
-  - This is the old function fh_ftrace_thunk() and its code below:
+  - This is the old function and its code below:
 ```
 static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, struct ftrace_ops *ops, struct pt_regs *regs)
 {
@@ -24,7 +24,7 @@ static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, s
 }
 ```
 
-  - This is the revised code of the function fh_ftrace_thunk() function below:
+  - This is the revised code of the function below:
 
 ```
 static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, struct ftrace_ops *ops, struct ftrace_regs *fregs)  // revised
