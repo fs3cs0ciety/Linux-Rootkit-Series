@@ -27,11 +27,11 @@ static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, s
   - This is the revised code of the function fh_ftrace_thunk() function below:
 
 ```
-static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, struct ftrace_ops *ops, struct ftrace_regs *fregs)
+static void notrace fh_ftrace_thunk(unsigned long ip, unsigned long parent_ip, struct ftrace_ops *ops, struct ftrace_regs *fregs)  // revised
 {
     struct ftrace_hook *hook = container_of(ops, struct ftrace_hook, ops);
 
-    struct pt_regs *regs = ftrace_get_regs(fregs);
+    struct pt_regs *regs = ftrace_get_regs(fregs); // Added
 
 #if USE_FENTRY_OFFSET
     regs->ip = (unsigned long) hook->function;
